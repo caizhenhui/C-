@@ -1,0 +1,37 @@
+package java3;
+import java.util.Scanner;
+ 
+public class Java3 {
+    public static void removeDuplicate(int[] list){
+    int[] a=new int[list.length];
+    int i,j,n=0;
+    for( i=0;i<list.length;i++)
+    {
+        for(j=0;j<n;j++)
+        if(list[i]==a[j]) break;
+        
+        if(j>=n)
+        {
+            a[n]=list[i];
+            n++;
+        } 
+    }
+    for(i=0;i<n;i++)
+        System.out.print(a[i]+" ");
+    }
+    
+    public static void main(String[] args) {
+        int n,i,j;
+        Scanner input=new Scanner(System.in);
+        System.out.println("输入数据的个数");
+        n=input.nextInt();
+        int[] list =new int[n];
+        for(i=0;i<n;i++)
+            list[i]=input.nextInt();
+        removeDuplicate(list);
+             
+                
+    } 
+    
+}
+
